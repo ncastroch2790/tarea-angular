@@ -1,0 +1,27 @@
+
+.sidenav-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;   
+  
+}
+
+.sidenav{
+  padding: 20px;
+  width: 25%;
+}
+
+.sidenav-content{
+  padding: 20px;
+  width: 75%;
+}
+
+.mat-card{  
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mat-form-field {
+  margin-right: 12px;
+}

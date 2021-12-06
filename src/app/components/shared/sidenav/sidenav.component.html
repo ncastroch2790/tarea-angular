@@ -1,0 +1,61 @@
+<mat-sidenav-container class="sidenav-container">
+    
+    <mat-sidenav class="sidenav" 
+                 #sidenav mode="side" [(opened)]="opened" 
+                 (opened)="events.push('open!')"
+                 (closed)="events.push('close!')">        
+                 
+      <mat-card>ICEWS Analyzer</mat-card>
+                 
+      <div>
+        <h2>Date Range</h2>                    
+      </div>
+
+      <mat-form-field color="primary" class="example-form-field" appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input
+          [formGroup]="campaignOne"
+          [rangePicker]="campaignOnePicker"
+          [comparisonStart]="campaignOne.value.start"
+          [comparisonEnd]="campaignOne.value.end">
+          <input matStartDate placeholder="Start date" formControlName="start">
+          <input matEndDate placeholder="End date" formControlName="end">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+        <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+      </mat-form-field>
+      
+      <div>
+        <h2>Involved Countries</h2>                    
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Countries</mat-label>
+        <mat-select [formControl]="countriesFormControl" 
+                    multiple 
+                    [(value)]="selected">
+          <mat-option (click)="addCountryMarker(country)" *ngFor="let country of countries" [value]="country.alpha2Code">{{ country.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <p>
+        Selected Value: {{ countrySelected }}
+      </p>
+
+    </mat-sidenav>
+  
+    <mat-sidenav-content class="sidenav-content">      
+      <button mat-icon-button color="primary"       
+              aria-label="Example icon button with a menu icon"
+              (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-tab-group>
+        <mat-tab label="Maps"> <app-map></app-map> </mat-tab>
+        <mat-tab label="Network"> <app-network></app-network> </mat-tab>
+        <mat-tab label="Raw"> <app-raw></app-raw> </mat-tab>        
+      </mat-tab-group>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+  
+  
