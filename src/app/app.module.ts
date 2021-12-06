@@ -13,7 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MapComponent } from './components/map/map.component';
 import { NetworkComponent } from './components/network/network.component';
 import { RawComponent } from './components/raw/raw.component';
-import  {TableauModule} from 'ngx-tableau';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -39,7 +38,6 @@ import { NgChartsModule } from 'ng2-charts'
     HttpClientModule,
     NgChartsModule,
     MaterialModule,    
-    TableauModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
