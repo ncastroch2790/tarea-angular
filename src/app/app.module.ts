@@ -14,10 +14,20 @@ import { MapComponent } from './components/map/map.component';
 import { NetworkComponent } from './components/network/network.component';
 import { RawComponent } from './components/raw/raw.component';
 
-import { AgmCoreModule } from '@agm/core';
+
+//Ngx Tableau
+import { TableauModule } from 'ngx-tableau';
 
 //Graficos
 import { NgChartsModule } from 'ng2-charts'
+import { Highcharts } from 'highcharts/modules/networkgraph'
+
+//Services
+import { EventsService } from './services/events.service';
+
+import { ChartComponent } from './components/chart/chart.component';
+
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -25,21 +35,23 @@ import { NgChartsModule } from 'ng2-charts'
     SidenavComponent, 
     MapComponent, 
     NetworkComponent, 
-    RawComponent,        
+    RawComponent,     
+    ChartComponent,     
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCgB_4DAsQPqE6wZNDnzla0LbNk6etIK-Q'
-    }),
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NgChartsModule,
     MaterialModule,    
+    TableauModule,    
+    HighchartsChartModule
   ],
-  providers: [],
+  providers: [
+    EventsService,    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

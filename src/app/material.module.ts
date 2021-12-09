@@ -17,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -40,7 +41,7 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,
     MatSnackBarModule,
     MatTableModule,
-    
+    MatSortModule    
   ],
   exports:[
     FormsModule,
@@ -59,7 +60,7 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,    
     MatSnackBarModule,
     MatTableModule,
-    
+    MatSortModule,
   ]
 })
 export class MaterialModule { }
