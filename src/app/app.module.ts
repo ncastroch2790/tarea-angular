@@ -45,15 +45,11 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HttpClientModule,
     NgChartsModule,
     MaterialModule,    
-<<<<<<< HEAD
     TableauModule,    
     HighchartsChartModule
   ],
   providers: [
     EventsService,    
-=======
-    TableauModule,
->>>>>>> d633690ff992a6c26a1f853fae4ee3f6619aeff8
   ],
   bootstrap: [AppComponent]
 })
