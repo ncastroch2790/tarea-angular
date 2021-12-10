@@ -27,6 +27,19 @@ import { EventsService } from './services/events.service';
 import { ChartComponent } from './components/chart/chart.component';
 
 import { HighchartsChartModule } from 'highcharts-angular';
+import { NetworkChartComponent } from './components/network-chart/network-chart.component';
+import { NgxGraphModule } from '@swimlane/ngx-graph';
+
+// Import angular-fusioncharts
+import { FusionChartsModule } from 'angular-fusioncharts';
+
+// Import FusionCharts library and chart modules
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import * as PowerCharts from 'fusioncharts/fusioncharts.powercharts';
+
+FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme, PowerCharts);
 
 @NgModule({
   declarations: [
@@ -35,7 +48,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     MapComponent, 
     NetworkComponent, 
     RawComponent,     
-    ChartComponent,     
+    ChartComponent, NetworkChartComponent,     
   ],
   imports: [
     CommonModule,
@@ -46,7 +59,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
     NgChartsModule,
     MaterialModule,    
     TableauModule,    
-    HighchartsChartModule
+    HighchartsChartModule,
+    NgxGraphModule,
+    FusionChartsModule,
   ],
   providers: [
     EventsService,    
