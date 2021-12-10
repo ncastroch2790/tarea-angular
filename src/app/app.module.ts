@@ -14,7 +14,6 @@ import { MapComponent } from './components/map/map.component';
 import { NetworkComponent } from './components/network/network.component';
 import { RawComponent } from './components/raw/raw.component';
 
-
 //Ngx Tableau
 import { TableauModule } from 'ngx-tableau';
 
@@ -46,11 +45,15 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HttpClientModule,
     NgChartsModule,
     MaterialModule,    
+<<<<<<< HEAD
     TableauModule,    
     HighchartsChartModule
   ],
   providers: [
     EventsService,    
+=======
+    TableauModule,
+>>>>>>> d633690ff992a6c26a1f853fae4ee3f6619aeff8
   ],
   bootstrap: [AppComponent]
 })
