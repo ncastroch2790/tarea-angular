@@ -6,27 +6,42 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
-
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
+
+//Componentes
+import { FusionchartComponent } from './components/fusionchart/fusionchart.component';
 import { MapComponent } from './components/map/map.component';
 import { NetworkComponent } from './components/network/network.component';
 import { RawComponent } from './components/raw/raw.component';
+import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
+
 
 //Ngx Tableau
 import { TableauModule } from 'ngx-tableau';
 
 //Graficos
 import { NgChartsModule } from 'ng2-charts'
-import { Highcharts } from 'highcharts/modules/networkgraph'
+
+//Angular FusionCharts
+import { FusionChartsModule } from 'angular-fusioncharts';
+
+//Angular FusionCharts library and chart modules
+import * as FusionCharts from 'fusioncharts';
+
+import * as PowerCharts from 'fusioncharts/fusioncharts.powercharts';
+
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+
+
+//Pass the fusioncharts library and chart modules
+FusionChartsModule.fcRoot(FusionCharts, PowerCharts, Charts, FusionTheme);
 
 //Services
 import { EventsService } from './services/events.service';
 
-import { ChartComponent } from './components/chart/chart.component';
-
-import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -34,8 +49,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     SidenavComponent, 
     MapComponent, 
     NetworkComponent, 
-    RawComponent,     
-    ChartComponent,     
+    RawComponent, FusionchartComponent
   ],
   imports: [
     CommonModule,
@@ -45,15 +59,11 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HttpClientModule,
     NgChartsModule,
     MaterialModule,    
-<<<<<<< HEAD
-    TableauModule,    
-    HighchartsChartModule
+    TableauModule,
+    FusionChartsModule
   ],
   providers: [
-    EventsService,    
-=======
-    TableauModule,
->>>>>>> d633690ff992a6c26a1f853fae4ee3f6619aeff8
+    EventsService
   ],
   bootstrap: [AppComponent]
 })

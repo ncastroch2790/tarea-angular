@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RawComponent } from './raw.component';
+import { FusionchartComponent } from './fusionchart.component';
 
-describe('RawComponent', () => {
-  let component: RawComponent;
-  let fixture: ComponentFixture<RawComponent>;
+describe('FusionchartComponent', () => {
+  let component: FusionchartComponent;
+  let fixture: ComponentFixture<FusionchartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RawComponent ]
+      declarations: [ FusionchartComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RawComponent);
+    fixture = TestBed.createComponent(FusionchartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
